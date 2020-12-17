@@ -67,12 +67,83 @@ button:hover {
 #quiz {
   display: none;
 }
+#result {
+  display: none;
+}
+#players-input {
+  size: "40";
+}
+#gameover {
+  margin-top: 100px;
+  margin-left: 20px;
+  align-items: center;
+  text-align: center;
+  display: none;
+}
+#scorePage {
+  border-radius: 14%;
+  display: none;
+  width: 50%;
+  border: solid;
+  border-color: limegreen;
+  padding-bottom: 10px;
+  background: lightslategrey;
+}
+#score-header {
+  border-radius: 20%;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+  background-color: green;
+  color: black;
+}
+#scoreContainer {
+  margin-top: 150px;
+  margin-bottom: 15px;
+  height: 100%;
+  width: 100%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#new-initials {
+  margin-left: 20px;
+  margin-right: 20px;
+  height: 30px;
+  width: 350px;
+  padding: 1px;
+  text-align: center;
+}
+#players-initials {
+  display: inline-block;
+  /* padding-left: 9.5rem; */
+  padding-left: 150px;
+  font-weight: bold;
+}
+#players-score {
+  float: right;
+  /* padding-right: 8.75rem; */
+  padding-right: 175px;
+  font-weight: bold;
+}
+#finalScore {
+  padding-bottom: 0.5rem;
+  font-size: x-large;
+  font-weight: bold;
+}
 #gameOverBtns {
   display: none;
 }
-#scoreContainer {
-  display: none;
+#submitScore {
+  background-color: #575b7e;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  width: 200px;
 }
-#gameover {
-  display: none;
+#quizTimer {
+  color: green;
+  font-size: xx-large;
+  text-align: center;
 }
