@@ -23,8 +23,8 @@ var gameOver = document.getElementById("gameover");
 var gameOverBtns = document.getElementById("gameOverBtns");
 var winAlertStyle = "position:absolute;top:10%;left:30%;background-color:white;font-weight:bold; color:green; font-size: xx-large;";
 var loseAlertStyle = "position:absolute;top:10%;left:30%;background-color:white;font-weight:bold; color:red; font-size: xx-large;";
-var correctAlertStyle="position:absolute;top:40%;left:20%;background-color:white;font-weight:bold; color:green; font-size: x-large;";
-var incorrectAlertStyle="position:absolute;top:40%;left:20%;background-color:white;font-weight:bold; color:red; font-size: x-large;";
+var correctAlertStyle="position:absolute;top:35%;left:10%;background-color:white;font-weight:bold; color:green; font-size: x-large;";
+var incorrectAlertStyle="position:absolute;top:35%;left:10%;background-color:white;font-weight:bold; color:red; font-size: x-large;";
 var allQuestions = [
   {
     question: "What is 10.01 + 2.1?",
@@ -249,24 +249,21 @@ function checkAnswer(answer) {
 
   if (answer === rightAnswer && currentQuestionIndex !== finalQuestionIndex) {
     score++;
-    customAlert("Correct Answer",2000,correctAlertStyle);    
+    customAlert("Correct Answer ✅ !!!!",2000,correctAlertStyle);    
     currentQuestionIndex++;
     displayQuestion();
-    console.log("Correct Answer");
   } else if (
     answer !== rightAnswer &&
     currentQuestionIndex !== finalQuestionIndex
   ) {
-  customAlert("Incorrect Answer",2000,incorrectAlertStyle);
+  customAlert("Incorrect Answer ❌ !!",2000,incorrectAlertStyle);
 
   //Subtract 10 seconds if the answer is incorrect
     timeLeft -= 10;
     currentQuestionIndex++;
     displayQuestion();
-    console.log("Incorrect Answer");
   } else {
     displayScore();
-    console.log("show score");
   }
 }
 
