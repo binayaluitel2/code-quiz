@@ -66,7 +66,46 @@ var allQuestions = [
     d: "20",
     answer: "a",
   },
-  
+  {
+    question: "What is 10.1 + 2.1?",
+    a: "12.11",
+    b: "12.2",
+    c: "13.11",
+    d: "13.10",
+    answer: "b",
+  },
+  {
+    question: "What is 12/2?",
+    a: "10",
+    b: "6",
+    c: "3",
+    d: "5",
+    answer: "b",
+  },
+  {
+    question: "What is is 9 - 1?",
+    a: "9",
+    b: "5",
+    c: "19",
+    d: "8",
+    answer: "d",
+  },
+  {
+    question: "What is 10 * 2?",
+    a: "1000",
+    b: "100",
+    c: "30",
+    d: "20",
+    answer: "d",
+  },
+  {
+    question: "What is 10 ^ 2?",
+    a: "1000",
+    b: "100",
+    c: "30",
+    d: "20",
+    answer: "b",
+  },
 ];
 
 var score = 0;
