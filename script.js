@@ -234,6 +234,8 @@ function replayQuiz() {
   innerBox.style.backgroundImage =
     "url('https://www.muralswallpaper.com/app/uploads/deep-blue-brick-wall-mural-plain-820x532.jpg')";
   scoreTracker.textContent = "";
+  quizTimer.style.color = "green";
+
 }
 
 function customAlert(msg, duration, styleAlert) {
