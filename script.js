@@ -232,7 +232,8 @@ function replayQuiz() {
   score = 0;
   currentQuestionIndex = 0;
   innerBox.style.backgroundImage =
-    "url('https://i.pinimg.com/originals/af/8d/63/af8d63a477078732b79ff9d9fc60873f.jpg')";
+    "url('https://www.muralswallpaper.com/app/uploads/deep-blue-brick-wall-mural-plain-820x532.jpg')";
+  scoreTracker.textContent = "";
 }
 
 function customAlert(msg, duration, styleAlert) {
