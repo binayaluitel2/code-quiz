@@ -17,7 +17,7 @@ var optionA = document.getElementById("a");
 var optionB = document.getElementById("b");
 var optionC = document.getElementById("c");
 var optionD = document.getElementById("d");
-var resultsEl = document.getElementById("result");
+var scoreTracker = document.getElementById("result");
 var finalScoreEl = document.getElementById("finalScore");
 var gameOver = document.getElementById("gameover");
 var gameOverBtns = document.getElementById("gameOverBtns");
@@ -199,7 +199,8 @@ function highscore() {
     return false;
   } else {
     var localStorageScore =
-      JSON.parse(localStorage.getItem("localStorageScore")) || [];
+      JSON.parse(localStorage.getItem("localStorageScore"))||[] ;
+
     var currentUser = highscoreInitials.value.trim();
     var currentScore = {
       name: currentUser,
@@ -249,7 +250,17 @@ function checkAnswer(answer) {
 
   if (answer === rightAnswer && currentQuestionIndex !== finalQuestionIndex) {
     score++;
-    customAlert("Correct Answer ✅ !!!!",2000,correctAlertStyle);    
+    customAlert("Correct Answer ✅ !!!!",2000,correctAlertStyle); 
+    scoreTracker.textContent = "Your score as of now is "+score + " out of " +(currentQuestionIndex+1) +".";
+    scoreTracker.style.background = "green";
+    scoreTracker.style.color = "white";
+    scoreTracker.style.display = "block";
+    scoreTracker.style.textAlign = "center";
+    scoreTracker.style.width = "300px";
+    scoreTracker.style.marginLeft= "300px";
+
+
+
     currentQuestionIndex++;
     displayQuestion();
   } else if (
@@ -257,6 +268,16 @@ function checkAnswer(answer) {
     currentQuestionIndex !== finalQuestionIndex
   ) {
   customAlert("Incorrect Answer ❌ !!",2000,incorrectAlertStyle);
+  scoreTracker.textContent = "Your score as of now is "+score + " out of " +(currentQuestionIndex+1) +".";
+  scoreTracker.style.background = "red";
+  scoreTracker.style.color = "white";
+  scoreTracker.style.display = "block";
+  scoreTracker.style.textAlign = "center";
+  scoreTracker.style.width = "300px";
+  scoreTracker.style.marginLeft= "300px";
+
+
+
 
   //Subtract 10 seconds if the answer is incorrect
     timeLeft -= 10;
