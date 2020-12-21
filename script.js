@@ -21,10 +21,14 @@ var scoreTracker = document.getElementById("result");
 var finalScoreEl = document.getElementById("finalScore");
 var gameOver = document.getElementById("gameover");
 var gameOverBtns = document.getElementById("gameOverBtns");
-var winAlertStyle = "position:absolute;top:10%;left:30%;background-color:white;font-weight:bold; color:green; font-size: xx-large;";
-var loseAlertStyle = "position:absolute;top:10%;left:30%;background-color:white;font-weight:bold; color:red; font-size: xx-large;";
-var correctAlertStyle="position:absolute;top:35%;left:10%;background-color:white;font-weight:bold; color:green; font-size: x-large;";
-var incorrectAlertStyle="position:absolute;top:35%;left:10%;background-color:white;font-weight:bold; color:red; font-size: x-large;";
+var winAlertStyle =
+  "position:absolute;top:10%;left:30%;background-color:white;font-weight:bold; color:green; font-size: xx-large;";
+var loseAlertStyle =
+  "position:absolute;top:10%;left:30%;background-color:white;font-weight:bold; color:red; font-size: xx-large;";
+var correctAlertStyle =
+  "position:absolute;top:35%;left:10%;background-color:white;font-weight:bold; color:green; font-size: x-large;";
+var incorrectAlertStyle =
+  "position:absolute;top:35%;left:10%;background-color:white;font-weight:bold; color:red; font-size: x-large;";
 var allQuestions = [
   {
     question: "What is 10.01 + 2.1?",
@@ -169,11 +173,9 @@ function displayScore() {
   finalScoreEl.style.color = "white";
   if (score <= 7) {
     // alert("You lost. Please try again.");
-    customAlert("You lost. Please try again",5000,loseAlertStyle);
-
+    customAlert("You lost. Please try again", 5000, loseAlertStyle);
   } else if (score >= 8) {
-    customAlert("You won. Congratulations!!",5000,winAlertStyle);
-
+    customAlert("You won. Congratulations!!", 5000, winAlertStyle);
   }
 }
 
@@ -199,7 +201,7 @@ function highscore() {
     return false;
   } else {
     var localStorageScore =
-      JSON.parse(localStorage.getItem("localStorageScore"))||[] ;
+      JSON.parse(localStorage.getItem("localStorageScore")) || [];
 
     var currentUser = highscoreInitials.value.trim();
     var currentScore = {
@@ -233,15 +235,14 @@ function replayQuiz() {
     "url('https://i.pinimg.com/originals/af/8d/63/af8d63a477078732b79ff9d9fc60873f.jpg')";
 }
 
-function customAlert(msg,duration,styleAlert)
-{
- var el = document.createElement("div");
- el.setAttribute("style",styleAlert);
- el.innerHTML = msg;
- setTimeout(function(){
-  el.parentNode.removeChild(el);
- },duration);
- document.body.appendChild(el);
+function customAlert(msg, duration, styleAlert) {
+  var el = document.createElement("div");
+  el.setAttribute("style", styleAlert);
+  el.innerHTML = msg;
+  setTimeout(function () {
+    el.parentNode.removeChild(el);
+  }, duration);
+  document.body.appendChild(el);
 }
 
 // This function checks the response to each answer
@@ -250,16 +251,19 @@ function checkAnswer(answer) {
 
   if (answer === rightAnswer && currentQuestionIndex !== finalQuestionIndex) {
     score++;
-    customAlert("Correct Answer ✅ !!!!",2000,correctAlertStyle); 
-    scoreTracker.textContent = "Your score as of now is "+score + " out of " +(currentQuestionIndex+1) +".";
+    customAlert("Correct Answer ✅ !!!!", 2000, correctAlertStyle);
+    scoreTracker.textContent =
+      "Your score as of now is " +
+      score +
+      " out of " +
+      (currentQuestionIndex + 1) +
+      ".";
     scoreTracker.style.background = "green";
     scoreTracker.style.color = "white";
     scoreTracker.style.display = "block";
     scoreTracker.style.textAlign = "center";
     scoreTracker.style.width = "300px";
-    scoreTracker.style.marginLeft= "300px";
-
-
+    scoreTracker.style.marginLeft = "300px";
 
     currentQuestionIndex++;
     displayQuestion();
@@ -267,19 +271,21 @@ function checkAnswer(answer) {
     answer !== rightAnswer &&
     currentQuestionIndex !== finalQuestionIndex
   ) {
-  customAlert("Incorrect Answer ❌ !!",2000,incorrectAlertStyle);
-  scoreTracker.textContent = "Your score as of now is "+score + " out of " +(currentQuestionIndex+1) +".";
-  scoreTracker.style.background = "red";
-  scoreTracker.style.color = "white";
-  scoreTracker.style.display = "block";
-  scoreTracker.style.textAlign = "center";
-  scoreTracker.style.width = "300px";
-  scoreTracker.style.marginLeft= "300px";
+    customAlert("Incorrect Answer ❌ !!", 2000, incorrectAlertStyle);
+    scoreTracker.textContent =
+      "Your score as of now is " +
+      score +
+      " out of " +
+      (currentQuestionIndex + 1) +
+      ".";
+    scoreTracker.style.background = "red";
+    scoreTracker.style.color = "white";
+    scoreTracker.style.display = "block";
+    scoreTracker.style.textAlign = "center";
+    scoreTracker.style.width = "300px";
+    scoreTracker.style.marginLeft = "300px";
 
-
-
-
-  //Subtract 10 seconds if the answer is incorrect
+    //Subtract 10 seconds if the answer is incorrect
     timeLeft -= 10;
     currentQuestionIndex++;
     displayQuestion();
